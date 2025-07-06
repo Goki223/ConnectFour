@@ -136,7 +136,7 @@
                 <Button 
                 Text="Enter Player Names" 
                 WidthRequest="160"
-                
+                Clicked="OpenPlayerModal"
                 Margin="0"
                 BackgroundColor="#ff9900"
             />
@@ -154,8 +154,30 @@
 
         </ScrollView>
 
+        <Grid x:Name="PlayerNameModal"
+      BackgroundColor="#80000000"
+      IsVisible="False"
+      VerticalOptions="Fill" HorizontalOptions="Fill"
+      Padding="40">
+            <Frame BackgroundColor="White"
+           CornerRadius="20"
+           Padding="20"
+           VerticalOptions="Center"
+           HorizontalOptions="Center">
+                <StackLayout Spacing="15">
+                    <Label Text="Enter Player Names" FontSize="20" HorizontalOptions="Center" TextColor="Black" />
 
-     </Grid>
+                    <Entry x:Name="Player1Entry" Placeholder="Player 1 Name" TextColor="#0A0A0A"/>
+                    <Entry x:Name="Player2Entry" Placeholder="Player 2 Name" TextColor="#0A0A0A"/>
+
+                    <Button Text="Start Game" Clicked="StartGameFromModal" BackgroundColor="#ff9900" />
+                    <Button Text="Cancel" Clicked="ClosePlayerModal" BackgroundColor="LightGray" />
+                </StackLayout>
+            </Frame>
+        </Grid>
+
+
+    </Grid>
 
 
 </ContentPage>
