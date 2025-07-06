@@ -12,6 +12,11 @@ namespace ConnectFour
         public Game ActiveGame { get; set; }
         public MainPage()
         {
+            var saved = Preferences.Get("LeaderboardData", null);
+            if (!string.IsNullOrEmpty(saved))
+            {
+                Leaderboard = JsonSerializer.Deserialize<Dictionary<string, Player>>(saved) ?? new();
+            }
 
             InitializeComponent();
             ActiveGame = new Game("Player1", "Player2");
@@ -96,7 +101,7 @@ namespace ConnectFour
 
         public async void ShowWinner(string winnerName)
         {
-            
+            AddWin(winnerName); 
             await DisplayAlert("🎉 Game Over", $"{winnerName} wins!", "New Game");
             ResetGame(null, EventArgs.Empty);
         }
@@ -120,6 +125,55 @@ namespace ConnectFour
             ResetGame(null, EventArgs.Empty); 
 
             PlayerNameModal.IsVisible = false;
+        }
+        private void LoadLeaderboard()
+        {
+            LeaderboardList.Clear();
+            foreach (var player in Leaderboard.Values.OrderByDescending(p => p.Score))
+            {
+                LeaderboardList.Add(new Player
+                {
+                    Name = player.Name,
+                    Score = player.Score
+                });
+            }
+            LeaderboardListView.ItemsSource = null;
+            LeaderboardListView.ItemsSource = LeaderboardList;
+        }
+        private void SaveLeaderboard()
+        {
+            string json = JsonSerializer.Serialize(Leaderboard);
+            Preferences.Set("LeaderboardData", json);
+        }
+        private void AddWin(string playerName)
+        {
+            if (string.IsNullOrWhiteSpace(playerName) || playerName == "Player1" || playerName == "Player2") return;
+
+            playerName = playerName.Trim();
+
+            if (Leaderboard.ContainsKey(playerName))
+            {
+                Leaderboard[playerName].Score++;
+            }
+            else
+            {
+                var newPlayer = new Player(playerName);
+                newPlayer.AddScore();
+                Leaderboard[playerName] = newPlayer;
+            }
+
+            SaveLeaderboard();
+            LoadLeaderboard();
+        }
+        private void OpenLeaderboard(object sender, EventArgs e)
+        {
+            LoadLeaderboard(); 
+            LeaderboardModal.IsVisible = true;
+        }
+
+        private void CloseLeaderboard(object sender, EventArgs e)
+        {
+            LeaderboardModal.IsVisible = false;
         }
     }
 }

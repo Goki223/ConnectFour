@@ -144,7 +144,7 @@
                 x:Name="LeaderboardBtn"
                 Text="Leaderboard"
                 WidthRequest="160"
-                
+                Clicked="OpenLeaderboard"
                 Margin="0"
                 BackgroundColor="#ff9900"
             />
@@ -175,6 +175,41 @@
                 </StackLayout>
             </Frame>
         </Grid>
+
+
+        <ContentView x:Name="LeaderboardModal"
+             BackgroundColor="#80000000"
+             IsVisible="False"
+             VerticalOptions="Fill"
+             HorizontalOptions="Fill">
+
+            <Grid VerticalOptions="Center" HorizontalOptions="Center">
+                <Frame BackgroundColor="White"
+               CornerRadius="20"
+               Padding="20"
+               WidthRequest="300"
+               HeightRequest="360"
+               HasShadow="True">
+
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Leaderboard" FontSize="20" HorizontalOptions="Center" TextColor="Black" />
+
+                        <CollectionView x:Name="LeaderboardListView" HeightRequest="200">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Orientation="Horizontal" Spacing="10">
+                                        <Label Text="{Binding Name}" FontSize="16" WidthRequest="150" TextColor="Black"/>
+                                        <Label Text="{Binding Score}" FontSize="16" TextColor="Black"/>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+
+                        <Button Text="Close" Clicked="CloseLeaderboard" BackgroundColor="#ff9900"/>
+                    </VerticalStackLayout>
+                </Frame>
+            </Grid>
+        </ContentView>
 
 
     </Grid>
