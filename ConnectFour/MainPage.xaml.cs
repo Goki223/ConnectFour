@@ -44,7 +44,7 @@ namespace ConnectFour
                 ChangeLabel(sender, e);
                 if (ActiveGame.Winner != "none")
                 {
-                    //ShowWinner(ActiveGame.Winner);
+                    ShowWinner(ActiveGame.Winner);
                 }
             }
         }
@@ -91,9 +91,35 @@ namespace ConnectFour
                 }
             }
 
-            return null; // Not found
+            return null; 
         }
 
-       
+        public async void ShowWinner(string winnerName)
+        {
+            
+            await DisplayAlert("🎉 Game Over", $"{winnerName} wins!", "New Game");
+            ResetGame(null, EventArgs.Empty);
+        }
+        private void OpenPlayerModal(object sender, EventArgs e)
+        {
+            PlayerNameModal.IsVisible = true;
+        }
+
+        private void ClosePlayerModal(object sender, EventArgs e)
+        {
+            PlayerNameModal.IsVisible = false;
+        }
+
+        private void StartGameFromModal(object sender, EventArgs e)
+        {
+            string name1 = Player1Entry.Text?.Trim() ?? "Player1";
+            string name2 = Player2Entry.Text?.Trim() ?? "Player2";
+            if(name1 == "") name1 = "Player1";
+            if(name2 == "") name2 = "Player2";
+            ActiveGame = new Game(name1, name2);
+            ResetGame(null, EventArgs.Empty); 
+
+            PlayerNameModal.IsVisible = false;
+        }
     }
 }

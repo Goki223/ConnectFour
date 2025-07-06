@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\Fakultet\\Semestar 4\\VP\\ConnectFour\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CC91DE1C-05FB-483F-8D92-CDB5C2638E6C}|ConnectFour\\ConnectFour.csproj|d:\\fakultet\\semestar 4\\vp\\connectfour\\connectfour\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC91DE1C-05FB-483F-8D92-CDB5C2638E6C}|ConnectFour\\ConnectFour.csproj|solutionrelative:connectfour\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CC91DE1C-05FB-483F-8D92-CDB5C2638E6C}|ConnectFour\\ConnectFour.csproj|d:\\fakultet\\semestar 4\\vp\\connectfour\\connectfour\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC91DE1C-05FB-483F-8D92-CDB5C2638E6C}|ConnectFour\\ConnectFour.csproj|solutionrelative:connectfour\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CC91DE1C-05FB-483F-8D92-CDB5C2638E6C}|ConnectFour\\ConnectFour.csproj|d:\\fakultet\\semestar 4\\vp\\connectfour\\connectfour\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{CC91DE1C-05FB-483F-8D92-CDB5C2638E6C}|ConnectFour\\ConnectFour.csproj|solutionrelative:connectfour\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CC91DE1C-05FB-483F-8D92-CDB5C2638E6C}|ConnectFour\\ConnectFour.csproj|d:\\fakultet\\semestar 4\\vp\\connectfour\\connectfour\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CC91DE1C-05FB-483F-8D92-CDB5C2638E6C}|ConnectFour\\ConnectFour.csproj|solutionrelative:connectfour\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CC91DE1C-05FB-483F-8D92-CDB5C2638E6C}|ConnectFour\\ConnectFour.csproj|d:\\fakultet\\semestar 4\\vp\\connectfour\\connectfour\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC91DE1C-05FB-483F-8D92-CDB5C2638E6C}|ConnectFour\\ConnectFour.csproj|solutionrelative:connectfour\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CC91DE1C-05FB-483F-8D92-CDB5C2638E6C}|ConnectFour\\ConnectFour.csproj|d:\\fakultet\\semestar 4\\vp\\connectfour\\connectfour\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -26,17 +26,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "MainPage.xaml.cs",
               "DocumentMoniker": "D:\\Fakultet\\Semestar 4\\VP\\ConnectFour\\ConnectFour\\MainPage.xaml.cs",
               "RelativeDocumentMoniker": "ConnectFour\\MainPage.xaml.cs",
               "ToolTip": "D:\\Fakultet\\Semestar 4\\VP\\ConnectFour\\ConnectFour\\MainPage.xaml.cs",
               "RelativeToolTip": "ConnectFour\\MainPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAkwHUAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-06T12:09:47.11Z",
               "EditorCaption": ""
@@ -49,14 +49,14 @@
               "RelativeDocumentMoniker": "ConnectFour\\MainPage.xaml",
               "ToolTip": "D:\\Fakultet\\Semestar 4\\VP\\ConnectFour\\ConnectFour\\MainPage.xaml",
               "RelativeToolTip": "ConnectFour\\MainPage.xaml",
-              "ViewState": "AgIAAH0AAAAAAAAAAAAawJIAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAAAIoAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-07-06T12:07:10.146Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Player.cs",
               "DocumentMoniker": "D:\\Fakultet\\Semestar 4\\VP\\ConnectFour\\ConnectFour\\Player.cs",
               "RelativeDocumentMoniker": "ConnectFour\\Player.cs",
@@ -77,8 +77,7 @@
               "RelativeToolTip": "ConnectFour\\Game.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-06T12:06:14.735Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-06T12:06:14.735Z"
             }
           ]
         }
