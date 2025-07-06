@@ -1,4 +1,11 @@
 ﻿using Microsoft.Extensions.Logging;
+using Microsoft.Maui.LifecycleEvents;
+
+#if WINDOWS
+using Microsoft.UI;
+using Microsoft.UI.Windowing;
+using Windows.Graphics;
+#endif
 
 namespace ConnectFour
 {
@@ -16,8 +23,31 @@ namespace ConnectFour
                 });
 
 #if DEBUG
-    		builder.Logging.AddDebug();
+            builder.Logging.AddDebug();
 #endif
+
+
+            builder.ConfigureLifecycleEvents(events =>
+            {
+#if WINDOWS
+                events.AddWindows(windows =>
+                {
+                    windows.OnWindowCreated(window =>
+                    {
+                        var hwnd = WinRT.Interop.WindowNative.GetWindowHandle(window);
+                        var windowId = Win32Interop.GetWindowIdFromWindow(hwnd);
+                        var appWindow = AppWindow.GetFromWindowId(windowId);
+
+                        
+                        appWindow.Resize(new SizeInt32
+                        {
+                            Width = 800,
+                            Height = 1100
+                        });
+                    });
+                });
+#endif
+            });
 
             return builder.Build();
         }
